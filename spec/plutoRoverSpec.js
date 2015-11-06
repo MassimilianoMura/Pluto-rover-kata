@@ -23,6 +23,10 @@ describe('PlutoRover', function () {
       expect(rover.tellPosition()).toEqual('The rover\'s position is now (0,0), with N heading');
     });
 
+    it('has a list of direction available', function() {
+      expect(rover.directions.length).toEqual(4);
+    });
+
   });
 
 

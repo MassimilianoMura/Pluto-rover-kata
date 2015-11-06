@@ -2,6 +2,7 @@ var PlutoRover = function () {
   this.x=0;
   this.y=0;
   this.heading='N';
+  this.directions = ['N','E','S','W']
 }
 
 PlutoRover.prototype.tellPosition = function() {
@@ -34,3 +35,10 @@ PlutoRover.prototype.moveRover = function(commands) {
       console.log('Wrong input');
     }
 };
+
+PlutoRover.prototype.turn = function(direction) {
+
+};
+
+
+
