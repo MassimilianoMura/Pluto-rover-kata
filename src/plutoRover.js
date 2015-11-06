@@ -36,9 +36,19 @@ PlutoRover.prototype.moveRover = function(commands) {
     }
 };
 
-PlutoRover.prototype.turn = function(direction) {
+PlutoRover.prototype.turn = function(command) {
+  var currentHeading = this.directions.indexOf(this.heading);
+
+  if (command === 'R') {
+    this.heading = this.directions[(currentHeading + 1) % 4];
+  } else if (command === 'L') {
+    this.heading = this.directions[(currentHeading + 4 - 1) % 4];
+  } else {
+    console.log('Wrong turn input');
+  }
 
 };
+
 
 
 

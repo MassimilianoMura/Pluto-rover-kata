@@ -80,7 +80,22 @@ describe('PlutoRover', function () {
       expect(rover.y).toEqual(4);
     });
 
-  })
+  });
+
+
+  describe('Pluto Rover turn and change its heading', function() {
+
+    it('can turn right', function() {
+      rover.turn('R');
+      expect(rover.heading).toEqual('E');
+    });
+
+    it('can turn left', function() {
+      rover.turn('L');
+      expect(rover.heading).toEqual('W');
+    });
+
+  });
 
 
 });
