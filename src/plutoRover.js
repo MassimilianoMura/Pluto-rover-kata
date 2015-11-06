@@ -23,3 +23,14 @@ PlutoRover.prototype.increaseX = function() {
 PlutoRover.prototype.decreaseX = function() {
   this.x--;
 };
+
+PlutoRover.prototype.moveRover = function(commands) {
+  for (i=0; i<commands.length; i++)
+    if (commands[i] === 'F' ) {
+      this.increaseY();
+    } else if (commands[i] === 'B') {
+      this.decreaseY();
+    } else {
+      console.log('Wrong input');
+    }
+};

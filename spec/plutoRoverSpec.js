@@ -53,5 +53,33 @@ describe('PlutoRover', function () {
 
   });
 
+  describe('Pluto Rover can move after received command to move forward and backward', function() {
+
+    it('can move forward', function() {
+      rover.moveRover('F');
+      expect(rover.y).toEqual(1);
+    });
+
+    it('can move backward', function() {
+      rover.moveRover('F');
+      rover.moveRover('B');
+      expect(rover.y).toEqual(0);
+    });
+
+    it('can take a list of command', function() {
+      rover.moveRover('FFFFB');
+      expect(rover.y).toEqual(3);
+    });
+
+    it('can skip a wrong command', function() {
+      rover.moveRover('FFFrFBF');
+      expect(rover.y).toEqual(4);
+    });
+
+  })
+
 
 });
+
+
+
