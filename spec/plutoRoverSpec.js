@@ -26,5 +26,32 @@ describe('PlutoRover', function () {
   });
 
 
+  describe('Pluto Rover can move', function() {
+
+    it('can increase its Y position', function() {
+      rover.increaseY();
+      expect(rover.y).toEqual(1);
+    });
+
+    it('can decrease its Y position', function() {
+      rover.increaseY();
+      rover.increaseY();
+      rover.decreaseY();
+      expect(rover.y).toEqual(1);
+    });
+
+    it('can increase its X position', function() {
+      rover.increaseX();
+      expect(rover.x).toEqual(1);
+    });
+
+    it('can increase its Y position', function() {
+      rover.increaseX();
+      rover.decreaseX();
+      expect(rover.x).toEqual(0);
+    });
+
+  });
+
 
 });
