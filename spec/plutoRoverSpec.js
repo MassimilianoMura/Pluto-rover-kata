@@ -19,7 +19,12 @@ describe('PlutoRover', function () {
       expect(rover.heading).toEqual('N');
     });
 
+    it('can communicate its position and heading', function() {
+      expect(rover.tellPosition()).toEqual('The rover\'s position is now (0,0), with N heading');
+    });
+
   });
+
 
 
 });

@@ -3,3 +3,7 @@ var PlutoRover = function () {
   this.y=0;
   this.heading='N';
 }
+
+PlutoRover.prototype.tellPosition = function() {
+  return('The rover\'s position is now (' + this.x + ',' + this.y + '), with ' + this.heading + ' heading');
+};
