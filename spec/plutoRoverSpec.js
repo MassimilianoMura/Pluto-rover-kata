@@ -80,6 +80,13 @@ describe('PlutoRover', function () {
       expect(rover.y).toEqual(4);
     });
 
+    it('can move and turn with the same list of commands', function() {
+      rover.moveRover('FFFFFRFFFLFFBRR');
+      expect(rover.y).toEqual(6);
+      expect(rover.x).toEqual(3);
+      expect(rover.heading).toEqual('S');
+    });
+
   });
 
 
@@ -99,6 +106,4 @@ describe('PlutoRover', function () {
 
 
 });
-
-
 

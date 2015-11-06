@@ -26,11 +26,26 @@ PlutoRover.prototype.decreaseX = function() {
 };
 
 PlutoRover.prototype.moveRover = function(commands) {
+
   for (i=0; i<commands.length; i++)
-    if (commands[i] === 'F' ) {
+    if (commands[i] === 'R' || commands[i] === 'L') {
+      this.turn(commands[i]);
+    } else if (commands[i] === 'F' && this.heading === 'N') {
       this.increaseY();
-    } else if (commands[i] === 'B') {
+    } else if (commands[i] === 'B' && this.heading === 'N') {
       this.decreaseY();
+    } else if (commands[i] === 'F' && this.heading === 'E') {
+      this.increaseX();
+    } else if (commands[i] === 'B' && this.heading === 'E') {
+      this.decreaseX();
+    } else if (commands[i] === 'F' && this.heading === 'S') {
+      this.decreaseY();
+    } else if (commands[i] === 'B' && this.heading === 'S') {
+      this.increaseY();
+    }  else if (commands[i] === 'F' && this.heading === 'W') {
+      this.decreaseX();
+    } else if (commands[i] === 'B' && this.heading === 'W') {
+      this.increaseX();
     } else {
       console.log('Wrong input');
     }
