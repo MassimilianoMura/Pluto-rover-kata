@@ -80,13 +80,6 @@ describe('PlutoRover', function () {
       expect(rover.y).toEqual(4);
     });
 
-    it('can move and turn with the same list of commands', function() {
-      rover.moveRover('FFFFFRFFFLFFBRR');
-      expect(rover.y).toEqual(6);
-      expect(rover.x).toEqual(3);
-      expect(rover.heading).toEqual('S');
-    });
-
   });
 
 
@@ -100,6 +93,17 @@ describe('PlutoRover', function () {
     it('can turn left', function() {
       rover.turn('L');
       expect(rover.heading).toEqual('W');
+    });
+
+  });
+
+  describe('Pluto Rover can receive a long series of commands, including the spin', function() {
+
+    it('can move forward/backward and turn (without moving) with the same list of commands', function() {
+      rover.moveRover('FFFFFRFFFLFFBRR');
+      expect(rover.y).toEqual(6);
+      expect(rover.x).toEqual(3);
+      expect(rover.heading).toEqual('S');
     });
 
   });
